@@ -1,0 +1,22 @@
+#form {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #2D3142;
+    border-radius: 1%;
+    padding: 25px 25px 0px 25px;
+    width: 80%;
+    margin: 0px 5px 10px 5px;
+}
+.personal-block, .edu-block, .exp-block {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+}
+.personal-block > *, .edu-block > *, .exp-block > * {
+    margin: 3px 0px;
+    padding: 3px;
+    font-size: medium;
+}
+#form h2 {
+    margin: 0px;
+}

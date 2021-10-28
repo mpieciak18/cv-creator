@@ -3,6 +3,7 @@ import './stylesheets/App.css'
 import Header from './components/Header.js'
 import Form from './components/Form.js'
 import Preview from './components/Preview.js'
+import './stylesheets/App.css'
 
 class App extends React.Component {
   constructor() {
@@ -145,7 +146,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id='main'>
         <Header />
         <Form 
           updatePersonal={this.updatePersonal}
