@@ -1,0 +1,8 @@
+#header {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+}
+#header > * {
+    margin: 20px 5px;
+}
