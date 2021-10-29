@@ -1,5 +1,4 @@
 import React from 'react'
-import './stylesheets/App.css'
 import Header from './components/Header.js'
 import Form from './components/Form.js'
 import Preview from './components/Preview.js'
@@ -30,7 +29,6 @@ class App extends React.Component {
         uni: '',
         start: '',
         end: '',
-        descr: ''
       }],
       previewOn: false
     }
@@ -86,7 +84,6 @@ class App extends React.Component {
         uni: section.children[1].value,
         start: section.children[2].value,
         end: section.children[3].value,
-        descr: section.children[4].value,
       }
 
       educations = [...educations, edu]
@@ -172,7 +169,11 @@ class App extends React.Component {
         delObj={this.delObj}
       />
     } else {
-      pageContents = <Preview />
+      pageContents = <Preview
+        personal={this.state.personal}
+        experience={this.state.experience}
+        education={this.state.education}
+      />
     }
 
     return (

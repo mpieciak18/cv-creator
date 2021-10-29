@@ -89,7 +89,6 @@ class Form extends React.Component {
                     <input type='text' placeholder='University' value={edu.uni} onChange={this.updateEducation}/>
                     <input type='text' placeholder='Start Date' value={edu.start} onChange={this.updateEducation}/>
                     <input type='text' placeholder='End Date' value={edu.end} onChange={this.updateEducation}/>
-                    <input type='text' placeholder='Description' value={edu.descr} onChange={this.updateEducation}/>
                     {buttonArea}
                 </div>
             )
@@ -102,12 +101,12 @@ class Form extends React.Component {
                 <div id='personal'>
                     <h2>Personal Information</h2>
                     <div className='personal-block'>
-                        <input type='text' placeholder='Name' onChange={this.updatePersonal}/>
-                        <input type='text' placeholder='Title' onChange={this.updatePersonal}/>
-                        <input type='text' placeholder='Email' onChange={this.updatePersonal}/>
-                        <input type='text' placeholder='Phone' onChange={this.updatePersonal}/>
-                        <input type='text' placeholder='Location' onChange={this.updatePersonal}/>
-                        <input type='text' placeholder='Objective' onChange={this.updatePersonal}/>
+                        <input type='text' placeholder='Name' value={this.props.personal.name} onChange={this.updatePersonal}/>
+                        <input type='text' placeholder='Title' value={this.props.personal.title} onChange={this.updatePersonal}/>
+                        <input type='text' placeholder='Email' value={this.props.personal.email} onChange={this.updatePersonal}/>
+                        <input type='text' placeholder='Phone' value={this.props.personal.phone} onChange={this.updatePersonal}/>
+                        <input type='text' placeholder='Location' value={this.props.personal.location} onChange={this.updatePersonal}/>
+                        <input type='text' placeholder='Objective' value={this.props.personal.objective} onChange={this.updatePersonal}/>
                     </div>
                 </div>
                 <div id='experience'>
