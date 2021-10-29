@@ -1,3 +1,3 @@
-# CV Project
+# Résumé Maker
 
-A CV creator app, built in React.
+A résumé maker app, built in React.
