@@ -2,11 +2,23 @@ import React from 'react'
 import '../stylesheets/Header.css'
 
 class Header extends React.Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
+    }
+
+    togglePreview = () => {
+        this.props.togglePreview()
     }
 
     render() {
+        let toggleText
+
+        if (this.props.previewOn == false) {
+            toggleText = <p>Preview Off</p>
+        } else {
+            toggleText = <p>Preview On</p>
+        }
+
         return(
             <div id='header'>
                 <div id='header-left'>
@@ -15,8 +27,8 @@ class Header extends React.Component {
                 </div>
                 <div id='header-right'>
                     <div id='preview-area'>
-                        <p>Preview Off</p>
-                        <input type="checkbox" id="preview-button" class="toggle-input" />
+                        {toggleText}
+                        <input type="checkbox" id="preview-button" class="toggle-input" onClick={this.togglePreview} />
                         <label class="preview-button toggle-label" for="preview-button">Toggle</label>
                     </div>
                     <button id='download-button' type='button'>Download PDF</button>

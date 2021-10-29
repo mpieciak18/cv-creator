@@ -31,7 +31,8 @@ class App extends React.Component {
         start: '',
         end: '',
         descr: ''
-      }]
+      }],
+      previewOn: false
     }
   }
 
@@ -144,20 +145,43 @@ class App extends React.Component {
     }
   }
 
+  togglePreview = () => {
+    if (this.state.previewOn == false) {
+      this.setState({
+        previewOn: true
+      })
+    } else {
+      this.setState({
+        previewOn: false
+      })
+    }
+  }
+
   render() {
+    let pageContents
+
+    if (this.state.previewOn == false) {
+      pageContents = <Form 
+        updatePersonal={this.updatePersonal}
+        personal={this.state.personal}
+        updateExperience={this.updateExperience}
+        experience={this.state.experience}
+        updateEducation={this.updateEducation}
+        education={this.state.education}
+        addObj={this.addObj}
+        delObj={this.delObj}
+      />
+    } else {
+      pageContents = <Preview />
+    }
+
     return (
       <div id='main'>
-        <Header />
-        <Form 
-          updatePersonal={this.updatePersonal}
-          personal={this.state.personal}
-          updateExperience={this.updateExperience}
-          experience={this.state.experience}
-          updateEducation={this.updateEducation}
-          education={this.state.education}
-          addObj={this.addObj}
-          delObj={this.delObj}
+        <Header 
+          togglePreview={this.togglePreview}
+          previewOn={this.state.previewOn}
         />
+        {pageContents}
         <Preview />
       </div>
     )
