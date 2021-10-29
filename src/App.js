@@ -182,7 +182,6 @@ class App extends React.Component {
           previewOn={this.state.previewOn}
         />
         {pageContents}
-        <Preview />
       </div>
     )
   }
