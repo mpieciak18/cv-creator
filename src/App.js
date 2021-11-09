@@ -36,7 +36,6 @@ class App extends React.Component {
 
   updatePersonal = (e) => {
     const form = e.target.parentNode
-    console.log(form.children)
 
     this.setState({
       personal: {
