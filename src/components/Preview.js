@@ -38,7 +38,7 @@ class Preview extends React.Component {
                             <div className='expLineOne'>
                                 <div className='expPosition'>{exp.position}</div>
                                 <div className='expLineOne-right'>
-                                    <div className='expCompany'>{exp.company} |</div>
+                                    <div className='expCompany'>{exp.company} | </div>
                                     <div className='expDates'>{exp.start} - {exp.end}</div>
                                 </div>
                             </div>
@@ -58,7 +58,7 @@ class Preview extends React.Component {
                         <div className='eduBlock'>
                             <div className='eduProgram'>{edu.program}</div>
                             <div className='eduBlock-right'>
-                                <div className='eduUni'>{edu.uni} |</div>
+                                <div className='eduUni'>{edu.uni} | </div>
                                 <div className='eduDates'>{edu.start} - {edu.end}</div>
                             </div>
                         </div>
