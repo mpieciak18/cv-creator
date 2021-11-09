@@ -5,3 +5,61 @@
     border-radius: 3px;
     padding: 96px;
 }
+#personal {
+    display: flex;
+    flex-direction: column;
+}
+#contact-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#personal-left > * {
+    margin-bottom: 6px;
+}
+#personal-right > * {
+    margin-bottom: 6px;
+}
+#dividing-line {
+    height: 1px;
+    width: auto;
+    background-color: #2D3142;
+    margin-bottom: 6px;
+}
+#experience {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -12px;
+}
+.expBlock {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+.expLineOne {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+.expLineOne-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#education {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: -6px;
+}
+.eduBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 6px;
+}
+.eduBlock-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
