@@ -36,13 +36,14 @@ class App extends React.Component {
 
   updatePersonal = (e) => {
     const form = e.target.parentNode
+    console.log(form.children)
 
     this.setState({
       personal: {
         name: form.children[0].value,
         title: form.children[1].value,
-        phone: form.children[2].value,
-        email: form.children[3].value,
+        email: form.children[2].value,
+        phone: form.children[3].value,
         location: form.children[4].value,
         objective: form.children[5].value
       }

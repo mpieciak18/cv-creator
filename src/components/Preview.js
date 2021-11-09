@@ -1,4 +1,5 @@
 import React from 'react'
+import '../stylesheets/Preview.css'
 
 class Preview extends React.Component {
     constructor(props) {
@@ -58,7 +59,7 @@ class Preview extends React.Component {
                             <div className='eduProgram'>{edu.program}</div>
                             <div className='eduBlock-right'>
                                 <div className='eduUni'>{edu.uni} |</div>
-                                <div className='eduUni'>{edu.start} - {edu.end}</div>
+                                <div className='eduDates'>{edu.start} - {edu.end}</div>
                             </div>
                         </div>
                     )
