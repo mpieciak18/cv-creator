@@ -4,6 +4,12 @@
     border-color: black;
     border-radius: 3px;
     padding: 96px;
+    height: 11in;
+    width: 8.5in;
+    margin-bottom: 30px;
+}
+#preview * {
+    font-size: 12pt;
 }
 #personal {
     display: flex;
@@ -20,11 +26,23 @@
 #personal-right > * {
     margin-bottom: 6px;
 }
+#pName {
+    font-size: 24pt;
+    text-transform: uppercase;
+}
+#pTitle {
+    font-size: 18pt;
+}
 #dividing-line {
     height: 1px;
     width: auto;
     background-color: #2D3142;
-    margin-bottom: 6px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#pObjective {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 #experience {
     display: flex;
@@ -62,4 +80,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.expDates, .eduDates {
+    margin-left: 4px;
+    font-weight: 500;
 }
