@@ -19,6 +19,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 5px;
 }
 #personal-left > * {
     margin-bottom: 6px;
@@ -29,9 +30,20 @@
 #pName {
     font-size: 24pt;
     text-transform: uppercase;
+    font-weight: bold;
 }
 #pTitle {
     font-size: 18pt;
+}
+.personal-right-line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.personal-icon {
+    height: 16pt;
+    width: 16pt;
+    margin-right: 4pt;
 }
 #dividing-line {
     height: 1px;
@@ -60,6 +72,9 @@
     justify-content: space-between;
     margin-bottom: 12px;
 }
+.expPosition, .eduProgram {
+    font-weight: 500;
+}
 .expLineOne-right {
     display: flex;
     flex-direction: row;
@@ -84,4 +99,11 @@
 .expDates, .eduDates {
     margin-left: 4px;
     font-weight: 500;
+}
+#pObjective, .expDescr {
+    font-weight: 300;
+}
+#experience > h2, #education > h2 {
+    text-transform: uppercase;
+    font-size: 16pt;
 }
