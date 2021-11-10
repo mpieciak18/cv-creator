@@ -1,5 +1,8 @@
 import React from 'react'
 import '../stylesheets/Preview.css'
+import phone from '../images/phone.png'
+import email from '../images/email.png'
+import location from '../images/location.png'
 
 class Preview extends React.Component {
     constructor(props) {
@@ -18,9 +21,18 @@ class Preview extends React.Component {
                         <div id='pTitle'>{personal.title}</div>
                     </div>
                     <div id='personal-right'>
-                        <div id='pPhone'>{personal.phone}</div>
-                        <div id='pEmail'>{personal.email}</div>
-                        <div id='pLocation'>{personal.location}</div>
+                        <div class='personal-right-line'>
+                            <img class='personal-icon' src={phone} />
+                            <div id='pPhone'>{personal.phone}</div>
+                        </div>
+                        <div class='personal-right-line'>
+                            <img class='personal-icon' src={email} />
+                            <div id='pEmail'>{personal.email}</div>
+                        </div>
+                        <div class='personal-right-line'>
+                            <img class='personal-icon' src={location} />
+                            <div id='pLocation'>{personal.location}</div>
+                        </div>
                     </div>
                 </div>
                 <div id='dividing-line'></div>
@@ -38,8 +50,8 @@ class Preview extends React.Component {
                             <div className='expLineOne'>
                                 <div className='expPosition'>{exp.position}</div>
                                 <div className='expLineOne-right'>
-                                    <div className='expCompany'>{exp.company} | </div>
-                                    <div className='expDates'>{exp.start} - {exp.end}</div>
+                                    <div className='expCompany'>{exp.company} |</div>
+                                    <div className='expDates'> {exp.start} - {exp.end}</div>
                                 </div>
                             </div>
                             <div className='expDescr'>{exp.descr}</div>
@@ -58,7 +70,7 @@ class Preview extends React.Component {
                         <div className='eduBlock'>
                             <div className='eduProgram'>{edu.program}</div>
                             <div className='eduBlock-right'>
-                                <div className='eduUni'>{edu.uni} | </div>
+                                <div className='eduUni'>{edu.uni} |</div>
                                 <div className='eduDates'>{edu.start} - {edu.end}</div>
                             </div>
                         </div>
