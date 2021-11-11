@@ -58,7 +58,8 @@ class Form extends React.Component {
                     <input type='text' placeholder='Position' value={exp.position} onChange={this.updateExperience}/>
                     <input type='text' placeholder='Start Date' value={exp.start} onChange={this.updateExperience}/>
                     <input type='text' placeholder='End Date' value={exp.end} onChange={this.updateExperience}/>
-                    <input type='text' placeholder='Description' value={exp.descr} onChange={this.updateExperience}/>
+                    {/* <input type='text' placeholder='Description' value={exp.descr} onChange={this.updateExperience}/> */}
+                    <textarea textarea rows='4' cols='20' placeholder='Description' value={exp.descr} onChange={this.updateExperience}/>
                     {buttonArea}
                 </div>
             )
@@ -106,7 +107,8 @@ class Form extends React.Component {
                         <input type='text' placeholder='Email' value={this.props.personal.email} onChange={this.updatePersonal}/>
                         <input type='text' placeholder='Phone' value={this.props.personal.phone} onChange={this.updatePersonal}/>
                         <input type='text' placeholder='Location' value={this.props.personal.location} onChange={this.updatePersonal}/>
-                        <input type='text' placeholder='Objective' value={this.props.personal.objective} onChange={this.updatePersonal}/>
+                        {/* <input type='text' placeholder='Objective' value={this.props.personal.objective} onChange={this.updatePersonal}/> */}
+                        <textarea rows='4' cols='20' placeholder='Objective' value={this.props.personal.objective} onChange={this.updatePersonal}/>
                     </div>
                 </div>
                 <div id='experience'>

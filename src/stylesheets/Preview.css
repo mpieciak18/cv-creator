@@ -103,6 +103,9 @@
 #pObjective, .expDescr {
     font-weight: 300;
 }
+.expDescr {
+    white-space: pre-wrap;
+}
 #experience > h2, #education > h2 {
     text-transform: uppercase;
     font-size: 16pt;
