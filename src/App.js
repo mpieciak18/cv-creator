@@ -173,6 +173,7 @@ class App extends React.Component {
         personal={this.state.personal}
         experience={this.state.experience}
         education={this.state.education}
+        border="hasBorder"
       />
     }
 

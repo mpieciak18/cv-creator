@@ -80,7 +80,7 @@ class Preview extends React.Component {
         )
 
         return (
-            <div id='preview'>
+            <div id='preview' className={this.props.border}>
                 {personalBlock}
                 {experienceBlock}
                 {educationBlock}
