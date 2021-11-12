@@ -1,20 +1,29 @@
 {
   "files": {
-    "main.css": "/resume-maker/static/css/main.347b280c.chunk.css",
-    "main.js": "/resume-maker/static/js/main.c24f64fb.chunk.js",
-    "main.js.map": "/resume-maker/static/js/main.c24f64fb.chunk.js.map",
-    "runtime-main.js": "/resume-maker/static/js/runtime-main.7f267f65.js",
-    "runtime-main.js.map": "/resume-maker/static/js/runtime-main.7f267f65.js.map",
-    "static/js/2.bf6b8e2a.chunk.js": "/resume-maker/static/js/2.bf6b8e2a.chunk.js",
-    "static/js/2.bf6b8e2a.chunk.js.map": "/resume-maker/static/js/2.bf6b8e2a.chunk.js.map",
+    "main.css": "/resume-maker/static/css/main.66339957.chunk.css",
+    "main.js": "/resume-maker/static/js/main.f12cd03f.chunk.js",
+    "main.js.map": "/resume-maker/static/js/main.f12cd03f.chunk.js.map",
+    "runtime-main.js": "/resume-maker/static/js/runtime-main.6088edd6.js",
+    "runtime-main.js.map": "/resume-maker/static/js/runtime-main.6088edd6.js.map",
+    "static/js/2.432b42d9.chunk.js": "/resume-maker/static/js/2.432b42d9.chunk.js",
+    "static/js/2.432b42d9.chunk.js.map": "/resume-maker/static/js/2.432b42d9.chunk.js.map",
+    "static/js/3.eb96780b.chunk.js": "/resume-maker/static/js/3.eb96780b.chunk.js",
+    "static/js/3.eb96780b.chunk.js.map": "/resume-maker/static/js/3.eb96780b.chunk.js.map",
+    "static/js/4.b12d2a66.chunk.js": "/resume-maker/static/js/4.b12d2a66.chunk.js",
+    "static/js/4.b12d2a66.chunk.js.map": "/resume-maker/static/js/4.b12d2a66.chunk.js.map",
     "index.html": "/resume-maker/index.html",
-    "static/css/main.347b280c.chunk.css.map": "/resume-maker/static/css/main.347b280c.chunk.css.map",
-    "static/js/2.bf6b8e2a.chunk.js.LICENSE.txt": "/resume-maker/static/js/2.bf6b8e2a.chunk.js.LICENSE.txt"
+    "static/css/main.66339957.chunk.css.map": "/resume-maker/static/css/main.66339957.chunk.css.map",
+    "static/js/2.432b42d9.chunk.js.LICENSE.txt": "/resume-maker/static/js/2.432b42d9.chunk.js.LICENSE.txt",
+    "static/js/3.eb96780b.chunk.js.LICENSE.txt": "/resume-maker/static/js/3.eb96780b.chunk.js.LICENSE.txt",
+    "static/js/4.b12d2a66.chunk.js.LICENSE.txt": "/resume-maker/static/js/4.b12d2a66.chunk.js.LICENSE.txt",
+    "static/media/email.5eee5274.png": "/resume-maker/static/media/email.5eee5274.png",
+    "static/media/location.f688e1ea.png": "/resume-maker/static/media/location.f688e1ea.png",
+    "static/media/phone.0883f5e3.png": "/resume-maker/static/media/phone.0883f5e3.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.7f267f65.js",
-    "static/js/2.bf6b8e2a.chunk.js",
-    "static/css/main.347b280c.chunk.css",
-    "static/js/main.c24f64fb.chunk.js"
+    "static/js/runtime-main.6088edd6.js",
+    "static/js/3.eb96780b.chunk.js",
+    "static/css/main.66339957.chunk.css",
+    "static/js/main.f12cd03f.chunk.js"
   ]
 }
