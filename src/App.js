@@ -2,11 +2,15 @@ import React from 'react'
 import Header from './components/Header.js'
 import Form from './components/Form.js'
 import Preview from './components/Preview.js'
+import html2canvas from 'html2canvas'
+import { jsPDF } from 'jspdf'
 import './stylesheets/App.css'
 
 class App extends React.Component {
   constructor() {
     super()
+
+    this.printRef = React.createRef()
 
     this.state = {
       personal: {
@@ -154,6 +158,25 @@ class App extends React.Component {
     }
   }
 
+  downloadPreview = async () => {
+    const preview = document.querySelector("#preview")
+
+    const canvas = await html2canvas(preview)
+
+    const imgData = canvas.toDataURL('image/png')
+    const pdf = new jsPDF({
+      orientation: 'portrait',
+      format: 'letter'
+    })
+
+    const imgProps= pdf.getImageProperties(imgData)
+    const pdfWidth = pdf.internal.pageSize.getWidth()
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width
+    console.log(pdfWidth, pdfHeight)
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
+    pdf.save('download.pdf')
+  }
+
   render() {
     let pageContents
 
@@ -169,12 +192,16 @@ class App extends React.Component {
         delObj={this.delObj}
       />
     } else {
-      pageContents = <Preview
-        personal={this.state.personal}
-        experience={this.state.experience}
-        education={this.state.education}
-        border="hasBorder"
-      />
+      pageContents = 
+        <div id='preview-box'>
+          <Preview
+            personal={this.state.personal}
+            experience={this.state.experience}
+            education={this.state.education}
+            border="hasBorder"
+            ref={this.printRef}
+          />
+        </div>
     }
 
     return (
@@ -182,6 +209,7 @@ class App extends React.Component {
         <Header 
           togglePreview={this.togglePreview}
           previewOn={this.state.previewOn}
+          downloadPreview={this.downloadPreview}
         />
         {pageContents}
       </div>

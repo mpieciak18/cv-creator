@@ -6,3 +6,8 @@
     align-items: center;
     margin: 0 auto;
 }
+#preview-box {
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-bottom: 30px;
+}
