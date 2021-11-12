@@ -10,13 +10,28 @@ class Header extends React.Component {
         this.props.togglePreview()
     }
 
+    downloadPreview = () => {
+        this.props.downloadPreview()
+    }
+
     render() {
         let toggleText
+        let downloadButton
 
         if (this.props.previewOn == false) {
             toggleText = <p>Preview Off</p>
+            downloadButton = (
+                <button id='download-button' type='button' className='preview-off'>
+                    Enable Preview
+                </button>
+            )
         } else {
             toggleText = <p>Preview On</p>
+            downloadButton = (
+                <button id='download-button' type='button' onClick={this.downloadPreview}>
+                    Download Résumé
+                </button>
+            )   
         }
 
         return(
@@ -31,7 +46,7 @@ class Header extends React.Component {
                         <input type="checkbox" id="preview-button" class="toggle-input" onClick={this.togglePreview} />
                         <label class="preview-button toggle-label" for="preview-button">Toggle</label>
                     </div>
-                    <button id='download-button' type='button'>Download PDF</button>
+                    {downloadButton}
                 </div>
             </div>
         )

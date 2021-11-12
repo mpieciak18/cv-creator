@@ -44,6 +44,12 @@
     padding: 3px;
     font-size: medium;
     font-weight: bold;
+    cursor: grab;
+}
+.preview-off {
+    pointer-events: none;
+    cursor: pointer;
+    color: grey
 }
 
 /* Start of Toggle Code */
