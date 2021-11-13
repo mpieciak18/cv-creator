@@ -161,7 +161,14 @@ class App extends React.Component {
   downloadPreview = async () => {
     const preview = document.querySelector("#preview")
 
-    const canvas = await html2canvas(preview)
+    const canvas = await html2canvas(preview, {
+      onclone: (clonedDoc) => {
+        clonedDoc.getElementById('preview').style.height = '11in'
+        clonedDoc.getElementById('preview').style.width = '8.5in'
+        clonedDoc.getElementById('preview').style.visibility = 'visible'
+        clonedDoc.getElementById('preview').style.padding = '1in'        
+      }
+    })
 
     const imgData = canvas.toDataURL('image/png')
     const pdf = new jsPDF({
@@ -198,8 +205,15 @@ class App extends React.Component {
             personal={this.state.personal}
             experience={this.state.experience}
             education={this.state.education}
-            border="hasBorder"
-            ref={this.printRef}
+            id="preview"
+            // ref={this.printRef}
+          />
+          <Preview
+            personal={this.state.personal}
+            experience={this.state.experience}
+            education={this.state.education}
+            id="mobile-preview"
+            // ref={this.printRef}
           />
         </div>
     }

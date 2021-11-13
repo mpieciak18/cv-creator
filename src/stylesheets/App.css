@@ -10,4 +10,12 @@
     border: 1px solid black;
     border-radius: 3px;
     margin-bottom: 30px;
+    padding: 1in;
+}
+@media (max-width: 610px) {
+    #preview-box {
+        width: 2.833in;
+        height: 3.667in;
+        padding: 0.33in
+    }
 }

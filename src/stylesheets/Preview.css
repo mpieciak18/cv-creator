@@ -1,33 +1,54 @@
-#preview {
-    padding: 1in;
+#preview, #mobile-preview {
     height: 11in;
     width: 8.5in;
 }
-#preview * {
+/* #preview *, #mobile-preview * {
     font-size: 12pt;
+} */
+#mobile-preview {
+    transform: scale(0.33);
+    transform-origin: 0 0;
 }
-#personal {
+@media(min-width: 610px) {
+    #preview {
+        visibility: visible;
+    }
+    #mobile-preview {
+        visibility: hidden;
+    }
+}
+@media(max-width: 610px) {
+    #preview {
+        visibility: hidden;
+        height: 0;
+        width: 0;
+    }
+    #mobile-preview {
+        visibility: visible;
+    }
+}
+.personal {
     display: flex;
     flex-direction: column;
 }
-#contact-info {
+.contact-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 5px;
 }
-#personal-left > * {
+.personal-left > * {
     margin-bottom: 6px;
 }
-#personal-right > * {
+.personal-right > * {
     margin-bottom: 6px;
 }
-#pName {
+.pName {
     font-size: 24pt;
     text-transform: uppercase;
     font-weight: bold;
 }
-#pTitle {
+.pTitle {
     font-size: 18pt;
 }
 .personal-right-line {
@@ -40,18 +61,18 @@
     width: 16pt;
     margin-right: 4pt;
 }
-#dividing-line {
+.dividing-line {
     height: 1px;
     width: auto;
     background-color: #2D3142;
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#pObjective {
+.pObjective {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-#experience {
+.experience {
     display: flex;
     flex-direction: column;
     margin-bottom: -12px;
@@ -75,7 +96,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
-#education {
+.education {
     display: flex;
     flex-direction: column;
     margin-bottom: -6px;
@@ -95,13 +116,13 @@
     margin-left: 4px;
     font-weight: 500;
 }
-#pObjective, .expDescr {
+.pObjective, .expDescr {
     font-weight: 300;
 }
 .expDescr {
     white-space: pre-wrap;
 }
-#experience > h2, #education > h2 {
+.experience > h2, .education > h2 {
     text-transform: uppercase;
     font-size: 16pt;
 }

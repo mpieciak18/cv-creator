@@ -10,39 +10,39 @@ class Preview extends React.Component {
     }
 
     render() {
-        const { personal, experience, education} = this.props
+        const { personal, experience, education, id} = this.props
 
         let personalBlock
         personalBlock = (
-            <div id='personal'>
-                <div id='contact-info'>
-                    <div id='personal-left'>
-                        <div id='pName'>{personal.name}</div>
-                        <div id='pTitle'>{personal.title}</div>
+            <div class='personal'>
+                <div class='contact-info'>
+                    <div class='personal-left'>
+                        <div class='pName'>{personal.name}</div>
+                        <div class='pTitle'>{personal.title}</div>
                     </div>
-                    <div id='personal-right'>
+                    <div class='personal-right'>
                         <div class='personal-right-line'>
                             <img class='personal-icon' src={phone} />
-                            <div id='pPhone'>{personal.phone}</div>
+                            <div class='pPhone'>{personal.phone}</div>
                         </div>
                         <div class='personal-right-line'>
                             <img class='personal-icon' src={email} />
-                            <div id='pEmail'>{personal.email}</div>
+                            <div class='pEmail'>{personal.email}</div>
                         </div>
                         <div class='personal-right-line'>
                             <img class='personal-icon' src={location} />
-                            <div id='pLocation'>{personal.location}</div>
+                            <div class='pLocation'>{personal.location}</div>
                         </div>
                     </div>
                 </div>
-                <div id='dividing-line'></div>
-                <div id='pObjective'>{personal.objective}</div>
+                <div class='dividing-line'></div>
+                <div class='pObjective'>{personal.objective}</div>
             </div>
         )
         
         let experienceBlock
         experienceBlock = (
-            <div id='experience'>
+            <div class='experience'>
                 <h2>Work Experience</h2>
                 {experience.map((exp) => {
                     return (
@@ -63,7 +63,7 @@ class Preview extends React.Component {
 
         let educationBlock
         educationBlock = (
-            <div id='education'>
+            <div class='education'>
                 <h2>Education</h2>
                 {education.map((edu) => {
                     return (
@@ -80,7 +80,7 @@ class Preview extends React.Component {
         )
 
         return (
-            <div id='preview' className={this.props.border}>
+            <div id={id}>
                 {personalBlock}
                 {experienceBlock}
                 {educationBlock}
