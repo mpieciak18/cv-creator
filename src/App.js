@@ -10,8 +10,6 @@ class App extends React.Component {
   constructor() {
     super()
 
-    this.printRef = React.createRef()
-
     this.state = {
       personal: {
         name: '',
@@ -179,7 +177,6 @@ class App extends React.Component {
     const imgProps= pdf.getImageProperties(imgData)
     const pdfWidth = pdf.internal.pageSize.getWidth()
     const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width
-    console.log(pdfWidth, pdfHeight)
     pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight)
     pdf.save('download.pdf')
   }
