@@ -203,14 +203,12 @@ class App extends React.Component {
             experience={this.state.experience}
             education={this.state.education}
             id="preview"
-            // ref={this.printRef}
           />
           <Preview
             personal={this.state.personal}
             experience={this.state.experience}
             education={this.state.education}
             id="mobile-preview"
-            // ref={this.printRef}
           />
         </div>
     }
