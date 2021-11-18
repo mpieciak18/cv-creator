@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Header from './components/Header.js'
 import Form from './components/Form.js'
 import Preview from './components/Preview.js'
@@ -6,52 +6,43 @@ import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
 import './stylesheets/App.css'
 
-class App extends React.Component {
-  constructor() {
-    super()
+const App = () => {
+  const [personal, setPersonal] = useState({
+    name: '',
+    title: '',
+    phone: '',
+    email: '',
+    location: '',
+    objective: ''
+  })
+  const [experience, setExperience] = useState([{
+    company: '',
+    position: '',
+    start: '',
+    end: '',
+    descr: ''
+  }])
+  const [education, setEducation] = useState([{
+    program: '',
+    uni: '',
+    start: '',
+    end: ''
+  }])
+  const [previewOn, setPreviewOn] = useState(false)
 
-    this.state = {
-      personal: {
-        name: '',
-        title: '',
-        phone: '',
-        email: '',
-        location: '',
-        objective: ''
-      },
-      experience: [{
-        company: '',
-        position: '',
-        start: '',
-        end: '',
-        descr: ''
-      }],
-      education: [{
-        program: '',
-        uni: '',
-        start: '',
-        end: '',
-      }],
-      previewOn: false
-    }
-  }
-
-  updatePersonal = (e) => {
+  const updatePersonal = (e) => {
     const form = e.target.parentNode
-
-    this.setState({
-      personal: {
-        name: form.children[0].value,
-        title: form.children[1].value,
-        email: form.children[2].value,
-        phone: form.children[3].value,
-        location: form.children[4].value,
-        objective: form.children[5].value
-      }
+    setPersonal({
+      name: form.children[0].value,
+      title: form.children[1].value,
+      email: form.children[2].value,
+      phone: form.children[3].value,
+      location: form.children[4].value,
+      objective: form.children[5].value
     })
   }
 
-  updateExperience = (e) => {
+  const updateExperience = (e) => {
     const form = e.target.parentNode.parentNode
     let experiences = []
 
@@ -69,12 +60,10 @@ class App extends React.Component {
       experiences = [...experiences, exp]
     }
 
-    this.setState({
-      experience: experiences
-    })
+    setExperience(experiences)
   }
 
-  updateEducation = (e) => {
+  const updateEducation = (e) => {
     const form = e.target.parentNode.parentNode
     let educations = []
 
@@ -91,14 +80,12 @@ class App extends React.Component {
       educations = [...educations, edu]
     }
 
-    this.setState({
-      education: educations
-    })
+    setEducation(educations)
   }
 
-  addObj = (selection) => {
+  const addObj = (selection) => {
     if (selection == 'experience') {
-        const prevExp = this.state.experience
+        const prevExp = experience
         const newExp = {
           company: '',
           position: '',
@@ -107,11 +94,10 @@ class App extends React.Component {
           descr: ''
         }
 
-        this.setState({
-            experience: [...prevExp, newExp]
-        })
+        setExperience([...prevExp, newExp])
+
     } else if (selection == 'education') {
-        const prevEdu = this.state.education
+        const prevEdu = education
         const newEdu = {
           program: '',
           uni: '',
@@ -120,43 +106,33 @@ class App extends React.Component {
           descr: ''
         }
 
-        this.setState({
-            education: [...prevEdu, newEdu]
-        })
+        setEducation([...prevEdu, newEdu])
     }
   }
 
-  delObj = (selection, index) => {
+  const delObj = (selection, index) => {
     if (selection == 'experience') {
-        const oldExp = this.state.experience
+        const oldExp = experience
         const experiences = [...oldExp.slice(0, index), ...oldExp.slice(index + 1)]
 
-        this.setState({
-          experience: experiences
-        })
+        setExperience(experiences)
     } else if (selection == 'education') {
-        const oldEdu = this.state.education
+        const oldEdu = education
         const educations = [...oldEdu.slice(0, index), ...oldEdu.slice(index + 1)]
 
-        this.setState({
-          education: educations
-        })
+        setEducation(educations)
     }
   }
 
-  togglePreview = () => {
-    if (this.state.previewOn == false) {
-      this.setState({
-        previewOn: true
-      })
+  const togglePreview = () => {
+    if (previewOn == false) {
+      setPreviewOn(true)
     } else {
-      this.setState({
-        previewOn: false
-      })
+      setPreviewOn(false)
     }
   }
 
-  downloadPreview = async () => {
+  const downloadPreview = async () => {
     const preview = document.querySelector("#preview")
 
     const canvas = await html2canvas(preview, {
@@ -181,49 +157,47 @@ class App extends React.Component {
     pdf.save('download.pdf')
   }
 
-  render() {
-    let pageContents
+  let pageContents
 
-    if (this.state.previewOn == false) {
-      pageContents = <Form 
-        updatePersonal={this.updatePersonal}
-        personal={this.state.personal}
-        updateExperience={this.updateExperience}
-        experience={this.state.experience}
-        updateEducation={this.updateEducation}
-        education={this.state.education}
-        addObj={this.addObj}
-        delObj={this.delObj}
-      />
-    } else {
-      pageContents = 
-        <div id='preview-box'>
-          <Preview
-            personal={this.state.personal}
-            experience={this.state.experience}
-            education={this.state.education}
-            id="preview"
-          />
-          <Preview
-            personal={this.state.personal}
-            experience={this.state.experience}
-            education={this.state.education}
-            id="mobile-preview"
-          />
-        </div>
-    }
-
-    return (
-      <div id='main'>
-        <Header 
-          togglePreview={this.togglePreview}
-          previewOn={this.state.previewOn}
-          downloadPreview={this.downloadPreview}
+  if (previewOn == false) {
+    pageContents = <Form 
+      updatePersonal={updatePersonal}
+      personal={personal}
+      updateExperience={updateExperience}
+      experience={experience}
+      updateEducation={updateEducation}
+      education={education}
+      addObj={addObj}
+      delObj={delObj}
+    />
+  } else {
+    pageContents = 
+      <div id='preview-box'>
+        <Preview
+          personal={personal}
+          experience={experience}
+          education={education}
+          id="preview"
         />
-        {pageContents}
+        <Preview
+          personal={personal}
+          experience={experience}
+          education={education}
+          id="mobile-preview"
+        />
       </div>
-    )
   }
+
+  return (
+    <div id='main'>
+      <Header 
+        togglePreview={togglePreview}
+        previewOn={previewOn}
+        downloadPreview={downloadPreview}
+      />
+      {pageContents}
+    </div>
+  )
 }
 
 export default App
