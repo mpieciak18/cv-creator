@@ -1,4 +1,4 @@
-# Résumé Maker
+# Make-a-Resume
 
 A résumé maker app, built in React.
 
