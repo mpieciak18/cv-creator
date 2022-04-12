@@ -1,8 +1,8 @@
 {
-  "name": "resume-maker",
+  "name": "make-a-resume",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://mpieciak18.github.io/resume-maker",
+  "homepage": "http://mpieciak18.github.io/make-a-resume",
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
